@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="angular.js"></script>
+    <script type="text/javascript">
+      var myData = {
+        name: "Adam",
+        weather: "sunny",
+        printMessages: function () {
+            console.log("Hello " + this.name + ". ");
+            console.log("Today is " + this.weather + ".");
+          }
+        };
+        var myExtendedObject = {
+          city: "London"
+        };
+
+        myData.printMessages();
+        angular.extend(myExtendedObject, myData);
+        console.log(myExtendedObject.name);
+        console.log(myExtendedObject.city);
+
+        myExtendedObject.name = "TAEHOON";
+        myExtendedObject.printMessages();
+
+        console.log("Hello");
+        console.log("This is also a statement");
+        console.log(angular.isString("Hello") + " " + angular.isArray(23));
+        console.log("I am " + angular.uppercase("shouting"));
+        console.log("I am " + angular.lowercase("WhiSpeRing"));
+
+        console.log("Test 1... : " + angular.isObject(myData));
+        console.log("Test 2... : " + angular.isObject(myExtendedObject));
+        console.log("Test 2... : " + angular.isObject(myExtendedObject.name));
+
+        for (var prop in myData) {
+            console.log("Name: " + prop + " Value: " + myData[prop]);
+        }
+        console.log("---");
+        angular.forEach(myData, function (value, key) {
+            console.log("Name: " + key + " Value: " + value);
+        });
+
+        var num = 5;
+        num = (5).toString() + String(5);
+        console.log("Result : " + num );
+
+        var myArray = [100, "Adam", true];
+
+        for (var i = 0; i < myArray.length; i++) {
+          console.log("Index " + i + ": " + myArray[i]);
+        }
+
+        console.log("---");
+
+        angular.forEach(myArray, function (value, key) {
+          console.log(key + ": " + value);
+        });
+
+
+    </script>
+</head>
+<body>
+  This is a simple example
+</body>
+</html>
